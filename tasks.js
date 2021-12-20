@@ -37,8 +37,14 @@ function onDataReceived(text) {
   if (text === 'quit\n') {
     quit();
   }
+  else if (text === 'exit\n'){
+    exit();
+  }
   else if(text === 'hello\n'){
     hello();
+  }
+  else if(text === 'help\n'){
+    help();
   }
   else{
     unknownCommand(text);
@@ -66,14 +72,16 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
-
+function help(){
+  console.log('quit\nexit\nhelp\nhello')
+}
 
 /**
  * Exits the application
  *
  * @returns {void}
  */
-function quit(){
+function exit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
