@@ -97,6 +97,8 @@ function help(){
 }
 function list(){
   tasks.forEach((element ,index) => {
+
+    
     console.log(`${index +1}-${element}`)
 
   });
