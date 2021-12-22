@@ -81,7 +81,7 @@ function hello(text){
  * @returns {void}
 */
 function help(){
-  console.log('the possible commands\nquit\nexit\nhelp\nhello')
+  console.log('the possible commands\nquit\nexit\nhelp\nhello\nhello:hello prints hello alone once you add something with it it will add it too')
 }
 
 /**
