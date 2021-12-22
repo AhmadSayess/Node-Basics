@@ -51,6 +51,7 @@ function onDataReceived(text) {
   
   else{
     unknownCommand(text);
+
   }
 }
 
@@ -73,7 +74,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(text){
-  console.log(text + '!')
+  console.log(text + "!")
 }
 
 /**list possible commands 
