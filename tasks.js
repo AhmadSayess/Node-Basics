@@ -33,7 +33,7 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
-var tasks= ["pizza","shawerma","tawouk"]
+var task= ["pizza","shawerma","tawouk"]
 
 function onDataReceived(text) {
   text = text.trim();
@@ -50,7 +50,7 @@ function onDataReceived(text) {
   else if(text === 'help'){
     help();
   }
-  else if(text === 'add'){
+  else if (text.trim().split(" ")[0] === 'add'){
     add(text);
   }
   else if(text === 'remove'){
@@ -96,12 +96,15 @@ function help(){
   console.log('the possible commands\nquit\nexit\nhelp\nhello\nhello:hello prints hello alone once you add something with it it will add it too')
 }
 function list(){
-  tasks.forEach((element ,index) => {
-
-    
+  task.forEach((element ,index) => {
     console.log(`${index +1}-${element}`)
 
   });
+}
+
+function add(text){
+  let inpt = text.split(" ");
+  task.push(inpt[1])
 }
  
 /**
