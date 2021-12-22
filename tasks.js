@@ -59,7 +59,11 @@ function onDataReceived(text) {
   else if(text === 'list'){
     list();
   }
+  else if(text ==='remove 1')
+  remove1();
   
+  else if(text==='remove 2')
+  remove2()
   
   else{
     unknownCommand(text);
@@ -98,7 +102,6 @@ function help(){
 function list(){
   task.forEach((element ,index) => {
     console.log(`${index +1}-${element}`)
-
   });
 }
 
@@ -106,7 +109,15 @@ function add(text){
   let inpt = text.split(" ");
   task.push(inpt[1])
 }
- 
+function remove(text){
+  console.log(task.pop());
+}
+function remove1(text){
+  console.log(task.shift());
+  }
+function remove2(text){
+  console.log(task.splice(1,1));
+    }
 /**
  * Exits the application
  *
