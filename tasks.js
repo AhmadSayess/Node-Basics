@@ -64,7 +64,11 @@ function onDataReceived(text) {
   
   else if(text==='remove 2')
   remove2()
-  
+
+  else if (text.trim().split(" ")[0] === "edit") {
+    edit(text);
+  }
+
   else{
     unknownCommand(text);
 
@@ -117,6 +121,24 @@ function remove1(text){
   }
 function remove2(text){
   console.log(task.splice(1,1));
+    }
+
+   
+    function edit(text){
+      var part = text.split(" ").length;
+        if (part <1){
+          console.log("undefind");
+        }
+        else if (part >2){
+          var textnew = text.split(" ")[2];
+          var index = text.split(" ")[1] -1;
+          task.splice(index, 1, textnew);
+        }
+        else{
+          var textnew = text.split(" ")[1];
+          task.splice(task.length -1,1, textnew);
+        }
+        console.log(task);
     }
 /**
  * Exits the application
